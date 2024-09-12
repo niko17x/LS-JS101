@@ -1,0 +1,12 @@
+{
+  "en": {
+    "welcome": "Welcome to Calculator!",
+    "invalidNumber": "Hmm... that doesn't look like a valid number.",
+    "invalidOperation": "You much choose either 1, 2, 3 or 4"
+  },
+  "es": {
+    "welcome": "Bienvenido a la calculadora!",
+    "invalidNumber": "Hmm... eso no parece un número válido.",
+    "invalidOperation": "Puedes elegir entre 1, 2, 3 o 4."
+  }
+}
