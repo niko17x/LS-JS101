@@ -2,7 +2,7 @@ const readlineSync = require("readline-sync");
 
 function loanCalculator() {
   let loanAmount;
-  let monthlyIntRate;
+  let interestRate;
   let loanDurationMonths;
   let monthlyPmnts;
 
@@ -29,18 +29,18 @@ function loanCalculator() {
   function displayResults() {
     console.log(`Title: ${title}`);
     console.log(`Loan amount: $${loanAmount}`);
-    console.log(`Monthly interest rate: ${monthlyIntRate}%`);
+    console.log(`Monthly interest rate: ${interestRate}%`);
     console.log(`Loan duration in months: ${loanDurationMonths} months`);
     console.log(`Monthly payments: $${monthlyPmnts}`);
   }
 
   function calculateLoan() {
-    const convertIntRate = monthlyIntRate / 100;
+    const annualIntRate = interestRate / 100;
+    const moIntRate = annualIntRate / 12;
 
     monthlyPmnts =
       loanAmount *
-      (convertIntRate /
-        (1 - Math.pow(1 + convertIntRate, -loanDurationMonths)));
+      (moIntRate / (1 - Math.pow(1 + moIntRate, -loanDurationMonths)));
 
     return (monthlyPmnts = convertToFloat(monthlyPmnts));
   }
@@ -52,15 +52,15 @@ function loanCalculator() {
 
   loanAmount = convertToFloat(loanAmount);
 
-  monthlyIntRate = readlineSync.question(
+  interestRate = readlineSync.question(
     "What is the monthly interest rate? Ex: 8.38\n"
   );
 
-  while (isNaN(monthlyIntRate) || monthlyIntRate < 0 || monthlyIntRate > 100) {
-    monthlyIntRate = displayErrorMsg("Input must be between 1 and 100.\n:");
+  while (isNaN(interestRate) || interestRate < 0 || interestRate > 100) {
+    interestRate = displayErrorMsg("Input must be between 1 and 100.\n:");
   }
 
-  monthlyIntRate = convertToFloat(monthlyIntRate);
+  interestRate = convertToFloat(interestRate);
 
   loanDurationMonths = readlineSync.question(
     "How many months is the loan duration? Ex: 60 months\n"
