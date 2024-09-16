@@ -29,7 +29,7 @@ function loanCalculator() {
   function displayResults() {
     console.log(`Title: ${title}`);
     console.log(`Loan amount: $${loanAmount}`);
-    console.log(`Monthly interest rate: ${interestRate}%`);
+    console.log(`Interest rate: ${interestRate}%`);
     console.log(`Loan duration in months: ${loanDurationMonths} months`);
     console.log(`Monthly payments: $${monthlyPmnts}`);
   }
@@ -46,15 +46,14 @@ function loanCalculator() {
   }
 
   loanAmount = readlineSync.question("What is the loan amount? Ex: 4999.99\n:");
+
   while (isNaN(loanAmount) || loanAmount < 1) {
     loanAmount = displayErrorMsg("Input must be a number greater than 1\n");
   }
 
   loanAmount = convertToFloat(loanAmount);
 
-  interestRate = readlineSync.question(
-    "What is the monthly interest rate? Ex: 8.38\n"
-  );
+  interestRate = readlineSync.question("What is the interest rate? Ex: 8.38\n");
 
   while (isNaN(interestRate) || interestRate < 0 || interestRate > 100) {
     interestRate = displayErrorMsg("Input must be between 1 and 100.\n:");
