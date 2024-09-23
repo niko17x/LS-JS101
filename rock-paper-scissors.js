@@ -154,9 +154,11 @@ function askForGameReplay() {
 }
 
 function resetGameStats() {
-  GAME_STATS.roundsPlayed = 0;
-  GAME_STATS.player.wins = 0;
-  GAME_STATS.computer.wins = 0;
+  const defaultScore = 0;
+
+  GAME_STATS.roundsPlayed = defaultScore;
+  GAME_STATS.player.wins = defaultScore;
+  GAME_STATS.computer.wins = defaultScore;
 }
 
 function incrementRound() {
@@ -193,3 +195,5 @@ function playGame() {
 while (runGame) {
   playGame();
 }
+
+// ? Do I want to add round feedback for winning/losing reason?
