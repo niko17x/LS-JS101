@@ -1,0 +1,23 @@
+{
+  "english": {
+    "welcome": "Welcome to Calculator!",
+    "invalidNumber": "Hmm... that doesn't look like a valid number.",
+    "invalidOperation": "You much choose either 1, 2, 3 or 4",
+    "firstNumber": "What is your first number?",
+    "secondNumber": "What is your second number?"
+  },
+  "spanish": {
+    "welcome": "Bienvenido a la calculadora!",
+    "invalidNumber": "Hmm... eso no parece un número válido.",
+    "invalidOperation": "Puedes elegir entre 1, 2, 3 o 4.",
+    "firstNumber": "¿cual es tu primer numero?",
+    "secondNumber": "¿cual es tu ¿cual es tu segundo numero? numero?"
+  },
+  "portugese": {
+    "welcome": "Bienvenido a la calculadora!",
+    "invalidNumber": "Hmm... eso no parece un número válido.",
+    "invalidOperation": "Puedes elegir entre 1, 2, 3 o 4.",
+    "firstNumber": "¿cual es tu primer numero?",
+    "secondNumber": "¿cual es tu ¿cual es tu segundo numero? numero?"
+  }
+}
